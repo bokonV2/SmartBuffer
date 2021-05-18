@@ -9,6 +9,7 @@ class App():
         self.windows.title("SmartBuffer")
         self.windows.resizable(0, 0)
         self.windows.tk.call("wm", "iconphoto", self.windows._w, PhotoImage(data=icon))
+
         self.build()
         self.smart = Buff()
 
@@ -36,9 +37,15 @@ class App():
         self.smart.RemapHotKey(hotkey4 = buff3K)
         self.smart.buff2 = buff3
         self.smart.whait = whait
-        self.lblBuff3.configure(text = 'Буфер №3    "."\n{}'.format(buff3))
+        self.lblBuff3.configure(text = 'Буфер №3\n{}'.format(buff3))
         self.lblWhait.configure(text = 'Сек: {}'.format(whait))
         self.lblBuff3Hot.configure(text = buff3K)
+
+    def updateBuff3(self):
+        buff3 = self.entBuff3.get()
+        self.smart.buff2 = buff3
+        self.lblBuff3.configure(text = 'Буфер №3\n{}'.format(buff3))
+
 
     def acceptBuff(self):
         copy =  self.entCopy.get()
@@ -100,8 +107,9 @@ class App():
 
         self.frmMid2 = Frame(window)
 
-        self.lblBuff3 = Label(window, text = 'Буфер №3    "."\nNone')
+        self.lblBuff3 = Label(window, text = 'Буфер №3\nNone')
         self.entBuff3 = Entry(window)
+        self.btnBuff3 = Button(window, text = "Обновить", command = self.updateBuff3)
 
         self.lblBuff3k = Label(window, text = "Быстрый ввод №3", anchor = 'w')
         self.entBuff3k = Entry(window)
@@ -135,7 +143,7 @@ class App():
 
         self.frmMid.grid(row = 8, column = 1, pady=15, padx=0, sticky="nsew")
 
-        l = 8
+        l = 9
         self.btnMouseCord.grid(row = 9+l, column = 1, pady=1, padx=1, sticky="nsew")
         self.lblMouseCord.grid(row = 9+l, column = 2, pady=1, padx=1, sticky="nsew")
 
@@ -145,18 +153,19 @@ class App():
 
         self.btnAceptMouse.grid(row = 12+l, column = 1, pady=1, padx=1, sticky="nsew")
 
-        self.frmMid2.grid(row = 16, column = 1, pady=15, padx=0, sticky="nsew")
+        self.frmMid2.grid(row = 17, column = 1, pady=15, padx=0, sticky="nsew")
 
         l1 = -4
         self.lblBuff3.grid(row = 14+l1, column = 1, columnspan = 2, pady=1, padx=1, sticky="nsew")
         self.entBuff3.grid(row = 15+l1, column = 1, columnspan = 2, pady=1, padx=1, sticky="nsew")
+        self.btnBuff3.grid(row = 16+l1, column = 1, columnspan = 2, pady=1, padx=1, sticky="nsew")
 
-        self.lblBuff3k.grid(row = 16+l1, column = 1, pady=1, padx=1, sticky="nsew")
-        self.entBuff3k.grid(row = 17+l1, column = 1, pady=1, padx=1, sticky="nsew")
-        self.lblBuff3Hot.grid(row = 17+l1, column = 2, pady=1, padx=1, sticky="nsew")
-        self.entWhait.grid(row = 18+l1, column = 1, pady=1, padx=1, sticky="nsew")
-        self.lblWhait.grid(row = 18+l1, column = 2, pady=1, padx=1, sticky="nsew")
-        self.btnAceptBuff3.grid(row = 19+l1, column = 1, columnspan = 2, pady=1, padx=1, sticky="nsew")
+        self.lblBuff3k.grid(row = 17+l1, column = 1, pady=1, padx=1, sticky="nsew")
+        self.entBuff3k.grid(row = 18+l1, column = 1, pady=1, padx=1, sticky="nsew")
+        self.lblBuff3Hot.grid(row = 18+l1, column = 2, pady=1, padx=1, sticky="nsew")
+        self.entWhait.grid(row = 19+l1, column = 1, pady=1, padx=1, sticky="nsew")
+        self.lblWhait.grid(row = 19+l1, column = 2, pady=1, padx=1, sticky="nsew")
+        self.btnAceptBuff3.grid(row = 20+l1, column = 1, columnspan = 2, pady=1, padx=1, sticky="nsew")
 
         self.frmMid3.grid(row = 30, column = 1, pady=15, padx=0, sticky="nsew")
 

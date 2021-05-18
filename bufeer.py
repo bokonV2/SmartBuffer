@@ -28,7 +28,9 @@ class Buff():
             send('enter')
 
     def pastLine(self):
-        line = self.buff2.split('.')
+        print(self.buff2.split())
+        line = self.buff2.split()
+        time.sleep(self.whait)
         for i in line:
             write(i, delay=0.001)
             send('enter')
