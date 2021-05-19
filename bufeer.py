@@ -15,6 +15,7 @@ class Buff():
         self.hotkey2 = "ctrl + n"
         self.hotkey3 = "ctrl + m"
         self.hotkey4 = "m + n"
+        self.i = 0
         self.whait = 0.5
         self.listHotkey = [[self.hotkey,self.pastBuff0], [self.hotkey2,self.pastBuff1],[self.hotkey3,self.pressMouse], [self.hotkey4, self.pastLine]]
 
@@ -30,11 +31,16 @@ class Buff():
     def pastLine(self):
         print(self.buff2.split())
         line = self.buff2.split()
+
+        if self.i == 0:
+            self.i = len(line)
+
+        write(line[len(line)-self.i], delay=0.001)
         time.sleep(self.whait)
-        for i in line:
-            write(i, delay=0.001)
-            send('enter')
-            time.sleep(self.whait)
+        send('enter')
+        self.i-=1
+
+
 
     def AddHotKey(self):
         print("Запуск скрипта")

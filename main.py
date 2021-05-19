@@ -7,6 +7,8 @@ class App():
     def __init__(self):
         self.windows = Tk()
         self.windows.title("SmartBuffer")
+        #self.windows.event_add('<<Paste>>', '<Control-Igrave>')
+        #self.windows.event_add("<<Copy>>", "<Control-ntilde>")
         self.windows.resizable(0, 0)
         self.windows.tk.call("wm", "iconphoto", self.windows._w, PhotoImage(data=icon))
 
