@@ -36,7 +36,6 @@ class Buff():
             self.i = len(line)
 
         write(line[len(line)-self.i], delay=0.001)
-        time.sleep(self.whait)
         send('enter')
         self.i-=1
 
@@ -54,21 +53,15 @@ class Buff():
         except:
             pass
 
-        if hotkey != None:
-            self.hotkey = hotkey
+        if hotkey != None: self.hotkey = hotkey
 
-        if hotkey2 != None:
-            self.hotkey2 = hotkey2
+        if hotkey2 != None: self.hotkey2 = hotkey2
 
-        if hotkey3 != None:
-            self.hotkey3 = hotkey3
+        if hotkey3 != None: self.hotkey3 = hotkey3
 
-        if hotkey4 != None:
-            self.hotkey4 = hotkey4
+        if hotkey4 != None: self.hotkey4 = hotkey4
 
         self.listHotkey = [[self.hotkey,self.pastBuff0], [self.hotkey2,self.pastBuff1],[self.hotkey3,self.pressMouse], [self.hotkey4, self.pastLine]]
-
-        #print(self.hotkey, self.hotkey2, self.hotkey3)
 
         if len(self.hotkey) == 1: self.RemapKey(self.hotkey)
         if len(self.hotkey2) == 1: self.RemapKey(self.hotkey2)
@@ -97,7 +90,6 @@ class Buff():
         if not pressed:
             return False
 
-    # Collect events until released Button, Controller
     def Mouse(self):
         with pynput.mouse.Listener(on_click=self.on_click) as listener:
             listener.join()
@@ -106,13 +98,3 @@ class Buff():
         controller = pynput.mouse.Controller()
         controller.position = (self.x, self.y)
         controller.click(pynput.mouse.Button.left, 1)
-
-
-#time.sleep(5)
-#time.sleep(5)
-#Buff().pasrLine()
-#a = Buff()
-#a.AddHotKey()
-#a.getNewBuff()
-#a.pastNewBuff()
-#a.Wait()

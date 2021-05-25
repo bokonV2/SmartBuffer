@@ -1,16 +1,21 @@
 icon = "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAtNQTFRFAAAAICMoHyMnHiEmIiUkHyIoICQoISMnICMnHB8mICInICMqHyInICMoICMoICMoICMoICMoICMoICMoHyMnICMoICMoICMoICMoICMoICIoICMoICMoICMoICMoICMoICMoICMoICMoICMoICMoICMoICMoICMoICMoICMoICMoHyMnHyInICMoICMoICMoICMoHyMoICMoICMoICMoICMoICMoHyIoICMoICMoICMoICMoICMoICMoICMoICMoICMoICInICMoHyMoICMoICMoHyInHSAlLC80LC4zMDI3dXZ6yMnKx8jJdXd6MTQ5eXp9zc3O+vr7////zc7Pent+MTQ4HiEmNTc8foCDz9DR+/v7zs/QMzY6ODs/goSH09TV/Pz80dLTNzo+T1JW0tLT/v7+xsfIPkBFLjE1bnB0wMHC+fn58PDxra+wXmBkJikuHB8lKy4zamxvvr/A9/f47u/vqqutVlhcJCcrGx4kKiwxZ2ltvb6/9vf36erqoaKkUVNXIyYrHB8kHiInMjU5Gx4jKSwwZGZqvLy+9fX15ubmmpyeSk1RISQpMzU6LzI2OjxBkZKV1tbX1dXWhoiLOTxAKSwxVVdbREZLQURIk5SX19jZ0dHSg4WHLTA1RklNuru89/f3/f392trbh4mLQ0ZKlZaZ4OHh8PDwpKWnKCswX2Fltba49PT02tvciIqMPD5DRUdLl5ia4+Pk5+jonp+iT1FVJykuXV9jsrO08vPz3+Dg5ebmmJmcSEpOJSgtWlxgrrCx8fHx4ODhkJGUREdLHSEmHSAmJCcsWFpenZ+hQENHSUxQiYuNPkFFTlFV1dbX4uPjlpiaREZKTE5SnqCiODtA7+/w4+Tkl5iboqOl6enq5OTllZeZU1VZp6iqnp+h6+vs3d7fjY+RIyYqUVRYo6Wn7e3uiYqNPUBEIiUqUFNWoKKk6OnpgoSGNTg8HIa7LAAAAEV0Uk5TAAAAAAAAAAAAAAAAAAMqcq3V9PMDOZjf/DgDG4rqGTbC/r8yRtnWQ9jBwAICOukCkwIr3mylawKGGr4z1Nc/NTEDNwOmJvfrmAAAAAFiS0dEU3pnHQYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAKHSURBVDjLY2CAAkZePn4BQSFXV2FBAX4+XkYGVMAkIiomLuEKBRLiYpJSyEqYGaVlZF1RgKyMHCMLTJ6VTV7BFR0oKikzskPlGVVU4eJubnCmmjojB8R8eQ24tLuHpztciZo8IyfI+dKacGkvbx9fPy+4Ei1poEsZtWVg0v4BgUHBwUEhoWEwJTI6XAyMumD3h7tHREZFB4NBdExkLESJniQjg74YWG1cfEJiMBwkJsUng4UNDBmMxEH6U1LTglFAWnpGOFDC2IiBHxR+bplZ2TnI8rl5+QXgMDVhEIC4sLCouKQUJl1WXlHpDnGmKYMg1EvhVdU1tXUg6fqGxqZmmE8FGYTBdEt4q797W3tHZ1d3T29fm1v/hHCIEmEGiA0TJ02eMnWae9v0GTNd28JnzZ4zd958iAqIgvAFCxcFL16ydKJ7W7PbsuUrgoNXroqAKoBYEb56zdp1wYvXb9i4afOW4OCt27Y3wawQhAX0jp27dgcv3rM3OHjvvv2u7nBHCkA9Ee7eduDgocPBaUeOHnOrOn4iHOZNcEC5Ni04enRZeNvJU6c3nAlvcz07+9z5PnBAmUGD+sLF4OBLl6+4tbm5V7levbY1OC37uhskqCGRVVBRfiM4+OatY25922/fCQ6+e29/EziyzBkYRfVALPem+w/KgBIPHzwKTnv85IpbOCy6GfWhCcb96bPnL4AhvXjJy1fhUCda6IOSlKUS1Evur9+8fZfwfhpM2tXKEpQ5uBmt1VzhSmZ+cIdJu9ooM3KDkjUHo7otPK2HI5K9jR0jKyRjsDPaa7qiA0UrB0YeWNZiwcx6ehZyEPOhgMtR0gA58xo4YeRvRmcjExdI9ncxM0JIAwBddigjPGjDmQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNy0wMy0zMFQxMzowMzoxMSswMjowMORKSbgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTctMDMtMzBUMTM6MDM6MTErMDI6MDCVF/EEAAAARnRFWHRzb2Z0d2FyZQBJbWFnZU1hZ2ljayA2LjcuOC05IDIwMTYtMDYtMTYgUTE2IGh0dHA6Ly93d3cuaW1hZ2VtYWdpY2sub3Jn5r80tgAAABh0RVh0VGh1bWI6OkRvY3VtZW50OjpQYWdlcwAxp/+7LwAAABh0RVh0VGh1bWI6OkltYWdlOjpoZWlnaHQANTEywNBQUQAAABd0RVh0VGh1bWI6OkltYWdlOjpXaWR0aAA1MTIcfAPcAAAAGXRFWHRUaHVtYjo6TWltZXR5cGUAaW1hZ2UvcG5nP7JWTgAAABd0RVh0VGh1bWI6Ok1UaW1lADE0OTA4NzE3OTF28+iMAAAAE3RFWHRUaHVtYjo6U2l6ZQAyOS40S0JCC+gWuwAAAFB0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzL2Nhcmxvc3ByZXZpL3NZcDlhM3kvMTE5NS8xNDkwODg5NjQ2LWJ1ZmZlcl84MjUyMy5wbmf+f3XHAAAAAElFTkSuQmCC"
 from tkinter import *
 from bufeer import Buff
+import time
+from keyboard import on_release_key, send, write, wait, remove_hotkey, add_hotkey, remap_hotkey, unhook_all_hotkeys
 #pyinstaller -F -w -i="buff.ico" -n="SmartBuffertest" --collect-all pynput main.py
 class App():
 
     def __init__(self):
         self.windows = Tk()
         self.windows.title("SmartBuffer")
-        #self.windows.event_add('<<Paste>>', '<Control-Igrave>')
-        #self.windows.event_add("<<Copy>>", "<Control-ntilde>")
         self.windows.resizable(0, 0)
         self.windows.tk.call("wm", "iconphoto", self.windows._w, PhotoImage(data=icon))
+
+        self.reBtnBuff1 = "q+w+e+r"
+        self.reBtnBuff2 = "q+w+e+r"
+
+        self.listHot = [[self.reBtnBuff1,self.readBuff1], [self.reBtnBuff2,self.readBuff2]]
 
         self.build()
         self.smart = Buff()
@@ -18,8 +23,35 @@ class App():
         self.windows.minsize(250,380)
         self.windows.mainloop()
 
+    def readBuff2(self):
+        send("ctrl + c")
+        time.sleep(.05)
+        buff = self.windows.clipboard_get()
+        print("Buff2", buff)
+        self.smart.buff0 = buff
+        self.lblBuff1.configure(text = "Буфер №1\n"+buff)
+
+    def readBuff1(self):
+        send("ctrl + c")
+        time.sleep(.05)
+        buff = self.windows.clipboard_get()
+        print("Buff2", buff)
+        self.smart.buff1 = buff
+        self.lblBuff2.configure(text = "Буфер №2\n"+buff)
+
+    def AddHot(self):
+        №print(self.listHot)
+        print("Запуск скрипта2")
+
+        for i in self.listHot:
+            add_hotkey(i[0], i[-1])
+
     def start(self):
         self.smart.AddHotKey()
+        self.AddHot()
+        self.smart.RemapHotKey(hotkey = self.past, hotkey2 = self.copy)
+        remap_hotkey("shift+"+self.copy, 'ctrl+{}'.format("shift+"+self.copy))
+        remap_hotkey("shift+"+self.past, 'ctrl+{}'.format("shift+"+self.past))
         self.lblApp.configure(text = "Работает")
         print("start")
 
@@ -50,17 +82,27 @@ class App():
 
 
     def acceptBuff(self):
-        copy =  self.entCopy.get()
-        past =  self.entPast.get()
+        self.copy =  self.entCopy.get()
+        self.past =  self.entPast.get()
         buff1 = self.entBuff1.get()
         buff2 = self.entBuff2.get()
 
         self.smart.buff0 = buff1
         self.smart.buff1 = buff2
 
-        self.smart.RemapHotKey(hotkey = past, hotkey2 = copy)
-        self.lblPast.configure(text = past)
-        self.lblCopy.configure(text = copy)
+        if self.copy == "" or self.copy == "q+w+e+r":
+            self.copy = "q+w+e+r"
+        else:
+            self.listHot[0][0] = "shift+"+self.copy
+            self.lblPast.configure(text = self.past)
+
+        if self.past == "" or self.copy == "q+w+e+r":
+            self.past = "q+w+e+r"
+        else:
+            self.listHot[1][0] = "shift+"+self.past
+            self.lblCopy.configure(text = self.copy)
+
+
         self.lblBuff1.configure(text = "Буфер №1\n"+buff1)
         self.lblBuff2.configure(text = "Буфер №2\n"+buff2)
         print("acceptBuff")
