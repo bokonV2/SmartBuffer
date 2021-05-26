@@ -14,19 +14,21 @@ class Buff():
         self.hotkey = "ctrl + b"
         self.hotkey2 = "ctrl + n"
         self.hotkey3 = "ctrl + m"
-        self.hotkey4 = "m + n"
+        self.hotkey4 = "space"
         self.i = 0
         self.whait = 0.5
         self.listHotkey = [[self.hotkey,self.pastBuff0], [self.hotkey2,self.pastBuff1],[self.hotkey3,self.pressMouse], [self.hotkey4, self.pastLine]]
 
 
     def pastBuff0(self):
-            write(self.buff0, delay=0.001)
-            send('enter')
+        print("Buff0")
+        write(self.buff0, delay=0.001)
+        send('enter')
 
     def pastBuff1(self):
-            write(self.buff1, delay=0.001)
-            send('enter')
+        print("Buff1")
+        write(self.buff1, delay=0.001)
+        send('enter')
 
     def pastLine(self):
         print(self.buff2.split())
@@ -42,7 +44,7 @@ class Buff():
 
 
     def AddHotKey(self):
-        print("Запуск скрипта")
+        print("Запуск скрипта\n",self.listHotkey)
         self.liveWork = True
         for i in self.listHotkey:
             add_hotkey(i[0], i[-1])
@@ -66,10 +68,11 @@ class Buff():
         if len(self.hotkey) == 1: self.RemapKey(self.hotkey)
         if len(self.hotkey2) == 1: self.RemapKey(self.hotkey2)
         if len(self.hotkey3) == 1: self.RemapKey(self.hotkey3)
-        if len(self.hotkey4) == 1: self.RemapKey(self.hotkey4)
+        if len(self.hotkey4) == 1 or self.hotkey4 == "space": self.RemapKey(self.hotkey4); print("remap space")
 
 
     def RemapKey(self,key):
+        print("RemapKey "+key)
         remap_hotkey(key, 'ctrl+{}'.format(key))
 
     def RemoveHotKey(self):
@@ -91,10 +94,12 @@ class Buff():
             return False
 
     def Mouse(self):
+        print("mouse!")
         with pynput.mouse.Listener(on_click=self.on_click) as listener:
             listener.join()
 
     def pressMouse(self):
+        print("mouse!2")
         controller = pynput.mouse.Controller()
         controller.position = (self.x, self.y)
         controller.click(pynput.mouse.Button.left, 1)

@@ -2,6 +2,9 @@ icon = "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFz
 from tkinter import *
 from bufeer import Buff
 import time
+import json
+import os
+dir = os.path.abspath(os.curdir)
 from keyboard import on_release_key, send, write, wait, remove_hotkey, add_hotkey, remap_hotkey, unhook_all_hotkeys
 #pyinstaller -F -w -i="buff.ico" -n="SmartBuffertest" --collect-all pynput main.py
 class App():
@@ -19,40 +22,85 @@ class App():
 
         self.build()
         self.smart = Buff()
+        self.defaultArg()
+        self.defaultArgUi()
+        self.saveDefaultArg()
 
         self.windows.minsize(250,380)
         self.windows.mainloop()
 
-    def readBuff2(self):
-        send("ctrl + c")
-        time.sleep(.05)
+    def defaultArg(self):
+        with open(f"{dir}/settings.json", 'r', encoding='utf-8') as f:
+            default = json.load(f)
+
+        self.buff1 = default['buff1']
+        self.buff2 = default['buff2']
+        self.past = default['past']
+        self.copy = default['copy']
+        self.buff3 = default['buff3']
+        self.buff3K = default['buff3K']
+        self.smart.y = default['smartx']
+        self.smart.x = default['smarty']
+        self.mouse = default['mouse']
+
+        self.smart.buff0 = self.buff1
+        self.smart.buff1 = self.buff2
+        self.smart.buff2 = self.buff3
+        self.smart.hotkey3 = self.mouse
+        self.smart.hotkey4 = self.buff3K
+        self.listHot = [["shift+"+self.past,self.readBuff2], ["shift+"+self.copy,self.readBuff1]]
+
+    def saveDefaultArg(self):
+        default = {}
+        default['buff1'] = self.buff1
+        default['buff2'] = self.buff2
+        default['past'] = self.past
+        default['copy'] = self.copy
+        default['buff3'] = self.buff3
+        default['buff3K'] = self.buff3K
+        default['smartx'] = self.smart.y
+        default['smarty'] = self.smart.x
+        default['mouse'] = self.mouse
+
+        with open(f"{dir}/settings.json", "w") as write_file:
+            json.dump(default, write_file, indent = 4)
+
+        print(default)
+
+    def readBuff1(self):
+        print(send("ctrl + c"),"copy1__________________________")
+        time.sleep(1)
         buff = self.windows.clipboard_get()
         print("Buff2", buff)
         self.smart.buff0 = buff
         self.lblBuff1.configure(text = "Буфер №1\n"+buff)
+        self.saveDefaultArg()
 
-    def readBuff1(self):
-        send("ctrl + c")
-        time.sleep(.05)
+    def readBuff2(self):
+        print(send("ctrl + c"),"copy2__________________________")
+        time.sleep(1)
         buff = self.windows.clipboard_get()
         print("Buff2", buff)
         self.smart.buff1 = buff
         self.lblBuff2.configure(text = "Буфер №2\n"+buff)
+        self.saveDefaultArg()
 
     def AddHot(self):
-        №print(self.listHot)
+        print(self.listHot)
         print("Запуск скрипта2")
-
         for i in self.listHot:
             add_hotkey(i[0], i[-1])
 
     def start(self):
-        self.smart.AddHotKey()
-        self.AddHot()
         self.smart.RemapHotKey(hotkey = self.past, hotkey2 = self.copy)
+        #self.smart.RemapHotKey(hotkey4 = self.buff3K)
+        #self.smart.RemapHotKey(hotkey3 = self.mouse)
         remap_hotkey("shift+"+self.copy, 'ctrl+{}'.format("shift+"+self.copy))
         remap_hotkey("shift+"+self.past, 'ctrl+{}'.format("shift+"+self.past))
+        self.smart.AddHotKey()
+        self.AddHot()
         self.lblApp.configure(text = "Работает")
+        self.saveDefaultArg()
         print("start")
 
     def stop(self):
@@ -61,62 +109,92 @@ class App():
         print("stop")
 
     def acceptBuff3(self):
-        buff3 = self.entBuff3.get()
-        buff3K = self.entBuff3k.get()
+        self.buff3 = self.entBuff3.get()
+        self.buff3K = self.entBuff3k.get()
         try:
             whait = float(self.entWhait.get())
         except:
             whait = 0.5
 
-        self.smart.RemapHotKey(hotkey4 = buff3K)
-        self.smart.buff2 = buff3
+
+        self.smart.buff2 = self.buff3
         self.smart.whait = whait
-        self.lblBuff3.configure(text = 'Буфер №3\n{}'.format(buff3))
+        self.lblBuff3.configure(text = 'Буфер №3\n{}'.format(self.buff3))
         self.lblWhait.configure(text = 'Сек: {}'.format(whait))
-        self.lblBuff3Hot.configure(text = buff3K)
+        self.lblBuff3Hot.configure(text = self.buff3K)
+        self.saveDefaultArg()
 
     def updateBuff3(self):
-        buff3 = self.entBuff3.get()
-        self.smart.buff2 = buff3
-        self.lblBuff3.configure(text = 'Буфер №3\n{}'.format(buff3))
+        self.buff3 = self.entBuff3.get()
+        self.smart.buff2 = self.buff3
+        self.lblBuff3.configure(text = 'Буфер №3\n{}'.format(self.buff3))
+        self.saveDefaultArg()
 
 
     def acceptBuff(self):
         self.copy =  self.entCopy.get()
         self.past =  self.entPast.get()
-        buff1 = self.entBuff1.get()
-        buff2 = self.entBuff2.get()
+        self.buff1 = self.entBuff1.get()
+        self.buff2 = self.entBuff2.get()
 
-        self.smart.buff0 = buff1
-        self.smart.buff1 = buff2
+        self.smart.buff0 = self.buff1
+        self.smart.buff1 = self.buff2
 
         if self.copy == "" or self.copy == "q+w+e+r":
             self.copy = "q+w+e+r"
         else:
             self.listHot[0][0] = "shift+"+self.copy
-            self.lblPast.configure(text = self.past)
+            self.lblCopy.configure(text = self.copy)
 
         if self.past == "" or self.copy == "q+w+e+r":
             self.past = "q+w+e+r"
         else:
             self.listHot[1][0] = "shift+"+self.past
-            self.lblCopy.configure(text = self.copy)
+            self.lblPast.configure(text = self.past)
 
 
-        self.lblBuff1.configure(text = "Буфер №1\n"+buff1)
-        self.lblBuff2.configure(text = "Буфер №2\n"+buff2)
+        self.lblBuff1.configure(text = "Буфер №1\n"+self.buff1)
+        self.lblBuff2.configure(text = "Буфер №2\n"+self.buff2)
+        self.saveDefaultArg()
         print("acceptBuff")
 
     def acceptMouse(self):
-        mouse = self.entMouse.get()
-        self.smart.RemapHotKey(hotkey3 = mouse)
-        self.lblMousHot.configure(text = mouse)
+        self.mouse = self.entMouse.get()
+        self.lblMousHot.configure(text = self.mouse)
+        self.saveDefaultArg()
         print("acceptMouse")
 
     def mouseCordinats(self):
-        print("mouseCordinats")
         self.smart.Mouse()
         self.lblMouseCord.configure(text = "Cord {} : {}".format(self.smart.x, self.smart.y))
+        print("mouseCordinats")
+        self.saveDefaultArg()
+
+    def defaultArgUi(self):
+        self.lblBuff1.configure(text = f'Буфер №1\n{self.buff1}')
+        self.entBuff1.insert(0, self.buff1)
+
+        self.lblBuff2.configure(text = f'Буфер №2\n{self.buff2}')
+        self.entBuff2.insert(0, self.buff2)
+
+        self.entPast.insert(0, self.past)
+        self.lblPast.configure(text = f"{self.past}")
+
+        self.entCopy.insert(0, self.copy)
+        self.lblCopy.configure(text = f"{self.copy}")
+
+        self.lblMouseCord.configure(text = f"Cord {self.smart.x} : {self.smart.y}")
+
+        self.entMouse.insert(0, self.mouse)
+        self.lblMousHot.configure(text = self.mouse)
+
+        self.lblBuff3.configure(text = f'Буфер №3\n{self.buff3}')
+        self.entBuff3.insert(0, self.buff3)
+
+        self.entBuff3k.insert(0, self.buff3K)
+        self.lblBuff3Hot.configure(text = self.buff3K)
+        self.entWhait.insert(0, "0.5")
+
 
 
     def build(self):
